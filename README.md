@@ -13,6 +13,15 @@
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
+A. *monthly uptime*
+- Total time that the service is often down during the month
+- Total time that the service is available to the users during the month
+
+B. *request response time*
+- The maximum number of time that the user waits for the data to be displayed on the frontend application
+- The minimum number of time that the backend API returns data to the client application
+- The average time that it takes for the request to be processed by the backend application
+
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
 
