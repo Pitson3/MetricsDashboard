@@ -13,15 +13,8 @@
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
-A. *monthly uptime*
-- Total time that the service is often down during the month
-- Total time that the service is available to the users during the month
-
-B. *request response time*
-- The maximum number of time that the user waits for the data to be displayed on the frontend application
-- The minimum number of time that the backend API returns data to the client application
-- The average time that it takes for the request to be processed by the backend application
-
+- The Service Level Objective(SLO) is the expected or overall projected performance goals in specific timeframe whereas the Service Level Indicator(SLI) defines or records the achieved performance level against the proposed SLO. Incase of the monthly uptime, the SLI would be a recording of the 90% of the service uptime against the expected SLO of 99.9% in a month. Meanwhile, for the request response time; the SLI will be an achieved average response time of 95ms against the expected SLO of 100ms in a specific month.
+ 
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
 
@@ -54,24 +47,39 @@ E. *Latency*
 
 TROUBLE TICKET
 
-Name:
+Name: Backend Error for the /star Endpoint
 
-Date:
+Date: 16th December, 2021
 
-Subject:
+Subject: /Star Endpoint Failed Due to MongoDB Issues
 
-Affected Area:
+Affected Area: Backend-Service(API)
 
-Severity:
+Severity: Critical
 
-Description:
+Description: An Internal Server Error is encountered on a psot request for the /star endpoint. The issue is triggered by the inaccessible MongoDB Server/Database on our local kubernetes cluster. Hence, MongoDB will have to be installed and configured on our local cluster in order to be recording successful post requests on the /star endpoint.
 
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
 
+- Uptime: The application/service should be3 up and running for atleast 99.9% of the time on monthly basis.
+- Latency: The average request response time should not exceed 15ms on monthly basis.
+- Error Rate: The 20X status codes should be recorded for not less than 99.9% of the total requests whereas the 50X and 40X status codes should be recorded for less than 0.1% on all of the http requests made in month.
+
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 
+- Resource Utilization: The amount of CPU, memory and other system resources used by a service or pod.
+- Error Rate: The recorded errors per unit time(mostly seconds). This covers the 40X and 50X errors
+- Uptime: The total time that a service is available for usage
+- Latency: The requests response time
+
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+
+- Uptime: 
+- Errors
+- Latency
+- CPU Usage
+- Memory Usage:
