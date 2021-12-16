@@ -57,13 +57,13 @@ Affected Area: Backend-Service(API)
 
 Severity: Critical
 
-Description: An Internal Server Error is encountered on a psot request for the /star endpoint. The issue is triggered by the inaccessible MongoDB Server/Database on our local kubernetes cluster. Hence, MongoDB will have to be installed and configured on our local cluster in order to be recording successful post requests on the /star endpoint.
+Description: An Internal Server Error is encountered on a post request for the /star endpoint. The issue is triggered by the inaccessible MongoDB Server/Database on our local kubernetes cluster. Hence, MongoDB will have to be installed and configured on our local cluster in order to be recording successful post requests on the /star endpoint.
 
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
 
-- Uptime: The application/service should be3 up and running for atleast 99.9% of the time on monthly basis.
+- Uptime: The application/service should be up and running for atleast 99.9% of the time on monthly basis.
 - Latency: The average request response time should not exceed 15ms on monthly basis.
 - Error Rate: The 20X status codes should be recorded for not less than 99.9% of the total requests whereas the 50X and 40X status codes should be recorded for less than 0.1% on all of the http requests made in month.
 
@@ -79,7 +79,7 @@ Description: An Internal Server Error is encountered on a psot request for the /
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
 - Uptime: 
-- Errors
-- Latency
-- CPU Usage
+- Errors:
+- Latency:
+- CPU Usage:
 - Memory Usage:
