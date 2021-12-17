@@ -1,6 +1,7 @@
 **Note:** For the screenshots, you can store all of your answer images in the `answer-img` directory.
 
-#Map the images
+[//]: # (Image References)
+
 [img_1]: ./answer-img/pods_svc_all_components.png
 [img_2]: ./answer-img/grafana_homepage.png
 [img_3]: ./answer-img/basic-dashboard.png
