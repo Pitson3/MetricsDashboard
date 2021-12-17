@@ -14,12 +14,12 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   # Use any version between 15.2.31.300 and 15.2.31.570
   config.vm.box = "opensuse/Leap-15.2.x86_64"
-  config.vm.box_version = "15.2.31.354"
+  #config.vm.box_version = "15.2.31.354"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
-  # config.vm.box_check_update = false
+  config.vm.box_check_update = false
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -37,6 +37,11 @@ Vagrant.configure("2") do |config|
   #config.vm.network "forwarded_port", guest: 8000, host: 8888
   config.vm.network "forwarded_port", guest: 8888, host: 8888
   config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 6443, host: 6443 # API Access
+  #Expose the used the 3 used nodePorts
+  config.vm.network "forwarded_port", guest: 30000, host: 30000, protocol: "tcp"
+  config.vm.network "forwarded_port", guest: 30001, host: 30001, protocol: "tcp"
+  config.vm.network "forwarded_port", guest: 30002, host: 30002, protocol: "tcp"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -70,7 +75,7 @@ Vagrant.configure("2") do |config|
 
     vb.memory = "4096"
     #vb.memory = "2048"
-    vb.name = "k3s"
+    vb.name = "MetricsDashboards"
   end
   #
   # View the documentation for the provider you are using for more
