@@ -77,13 +77,18 @@ def add_star():
 
     with tracer.start_span('star_span') as span:
         span.set_tag('star-tag', '80')
-        star = mongo.db.stars
-        name = request.json['name']
-        distance = request.json['distance']
-        star_id = star.insert({'name': name, 'distance': distance})
-        new_star = star.find_one({'_id': star_id })
-        output = {'name' : new_star['name'], 'distance' : new_star['distance']}
-        return jsonify({'result' : output})
+        
+        try:
+            star = mongo.db.stars
+            name = request.json['name']
+            distance = request.json['distance']
+            star_id = star.insert({'name': name, 'distance': distance})
+            new_star = star.find_one({'_id': star_id })
+            output = {'name' : new_star['name'], 'distance' : new_star['distance']}
+            return jsonify({'result' : output})
+        except Exception as e:
+            print(e)
+        
 
 @app.route('/error')
 @by_full_path_counter
