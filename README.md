@@ -217,8 +217,8 @@ Description: ```500 Internal Server Error```: The application issues the 500 err
 - Uptime: The total time that the services are up and running 
 - Errors: The http 40X and 50X errors encountered by the services
 - Latency: The http request response time
-- CPU Usage: The amount of cpu used by containerized applications esp. the backend and frontned service
-- Memory Usage: The amount of memory used by the containererized applications especially the backend and frontned service
+- CPU Usage: The amount of cpu used by containerized applications especially the backend and frontend service
+- Memory Usage: The amount of memory used by the containerized applications especially the backend and frontned service
 - Jaegar Spans: The trace for the backend and frontend service
 
 
