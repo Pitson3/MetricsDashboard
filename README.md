@@ -210,10 +210,11 @@ Description: An Internal Server Error is encountered on a post request for the /
 
 ![][img_8]
 
-- Uptime: Average time that the services are up and running 
+- Uptime: The total time that the services are up and running 
 - Errors: The http 40X and 50X errors encountered by the services
-- Latency: Average http requests per second
-- CPU Usage: The amount of cpu used by continers in a second
-- Memory Usage: The amount of memory used by the containers in a second
+- Latency: The http request response time
+- CPU Usage: The amount of cpu used by containerized applications esp. the backend and frontned service
+- Memory Usage: The amount of memory used by the containererized applications especially the backend and frontned service
+- Jaegar Spans: The trace for the backend and frontend service
 
 
