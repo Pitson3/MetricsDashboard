@@ -6,7 +6,9 @@
 [img_2]: ./answer-img/grafana_homepage.png
 [img_3]: ./answer-img/basic-dashboard.png
 [img_4]: ./answer-img/uptime_errors.png
-[img_5]: ./answer-img/backend_jaegar_trace.png
+[img_51]: ./answer-img/backend_jaegar_trace_one.png
+[img_52]: ./answer-img/backend_jaegar_trace_two.png
+[img_53]: ./answer-img/trouble_ticket_trace.png
 [img_6]: ./answer-img/Jaegar_Trace.png
 [img_7]: ./answer-img/FinalDashboard1.png
 [img_8]: ./answer-img/FinalDashboard2.png
@@ -163,7 +165,8 @@ if __name__ == "__main__":
     app.run(threaded=True)
 
 ```
-![][img_5]
+![][img_51]
+![][img_52]
 
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
@@ -175,18 +178,19 @@ if __name__ == "__main__":
 
 TROUBLE TICKET
 
-Name: Backend Error for the /star Endpoint
+Name: Error on ```backend/app/app.py```
 
-Date: 16th December, 2021
+Date: December 20 2021, 08:57:26.861
 
-Subject: /Star Endpoint Failed Due to MongoDB Issues
+Subject: Fails to add the name and distance of the star
 
-Affected Area: Backend-Service(API)
+Affected Area: ```"./reference-app/backend/app/app.py" for the /star endpoint```
 
-Severity: Critical
+Severity: High
 
-Description: An Internal Server Error is encountered on a post request for the /star endpoint. The issue is triggered by the inaccessible MongoDB Server/Database on our local kubernetes cluster. Hence, MongoDB will have to be installed and configured on our local cluster in order to be recording successful post requests on the /star endpoint.
+Description: ```500 Internal Server Error```: The application issues the 500 error upon the addition of the star to the database. Meanwhile, inspecting the span everything appears to be ok but there seems to be an issue caused by the mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb, which is not available on the local cluster. Hence, the MongoDB Driver and URL must be available on our local cluster.
 
+![][img_53]
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
