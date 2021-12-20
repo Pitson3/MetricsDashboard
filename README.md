@@ -202,10 +202,18 @@ Description: ```500 Internal Server Error```: The application issues the 500 err
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 
-- Resource Utilization: The amount of CPU, memory and other system resources used by a service or pod.
-- Error Rate: The recorded errors per unit time(mostly seconds). This covers the 40X and 50X errors
+A. Uptime
+- CPU Usage: This captures the amount or percentage of the cpu being used by an active service or pod. 
+- Memory Usage: This captures the amount of memory being used by an active service or pod
 - Uptime: The total time that a service is available for usage
-- Latency: The requests response time
+
+B. Error Rate
+- http 40x errors: This captures all of the 40x errors per second
+- http 50x errors: This captures all of the 50x errors per second
+
+C. Latency
+- Jaegar Span's Duration: This captures the duration of the tracing of the service's spans
+- Latency: This captures the total http's response time
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
